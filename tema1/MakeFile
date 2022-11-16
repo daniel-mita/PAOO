@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 2.8)
+
+CC = gcc
+
+item4: item4.cpp
+	${CC} item4.cpp -o item4
+
+item4: item5.cpp
+	${CC} item5.cpp -o item5
+
+item4: item6.cpp
+	${CC} item6.cpp -o item6
