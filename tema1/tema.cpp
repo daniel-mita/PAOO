@@ -19,9 +19,14 @@ class Proiect : private Uncopyable
 {
 public:
     /* Default Constructor (generated)*/
-    Proiect() {}
+    Proiect() : Nume("abc"), durataZile(0) {}
 
-    /* Copy constructor. (generated)*/
+    /* Custom Copy Constructor*/
+    Proiect(const Proiect &)
+    {
+    }
+
+    /* Assign operator. (generated)*/
     Proiect &operator=(const Proiect &proj)
     {
         if (this != &proj)
@@ -32,8 +37,8 @@ public:
         return *this;
     }
 
-    /* Custom Copy Constructors (generated)*/
-    Proiect(const string &Nume, const int &durataZile);
+    /* Custom Constructors */
+    Proiect(const string &Nume, const int &durataZile) : Nume(Nume), durataZile(durataZile) {}
 
     /* Destructor (generated)*/
     ~Proiect()
@@ -51,13 +56,13 @@ private:
     int durataZile;
 };
 
-Proiect::Proiect(const string &Nume, const int &durataZile) : Nume(Nume), durataZile(durataZile) {}
-
 int main()
 {
     Proiect proiect1("Aplicatie", 20);
     proiect1.afisareProiect();
     Proiect proiect2(proiect1);
     proiect2.afisareProiect();
+    Proiect proiect3;
+    proiect3.afisareProiect();
     return 0;
 }
