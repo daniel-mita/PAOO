@@ -57,10 +57,10 @@ RM = /opt/homebrew/Cellar/cmake/3.24.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/daniel/Facultate/PAOO/PAOO/tema1
+CMAKE_SOURCE_DIR = /Users/daniel/Facultate/PAOO/PAOO/tema2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/daniel/Facultate/PAOO/PAOO/tema1
+CMAKE_BINARY_DIR = /Users/daniel/Facultate/PAOO/PAOO/tema2
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/daniel/Facultate/PAOO/PAOO/tema1/CMakeFiles /Users/daniel/Facultate/PAOO/PAOO/tema1//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/daniel/Facultate/PAOO/PAOO/tema2/CMakeFiles /Users/daniel/Facultate/PAOO/PAOO/tema2//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/daniel/Facultate/PAOO/PAOO/tema1/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/daniel/Facultate/PAOO/PAOO/tema2/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named tema1
+# Target rules for targets named tema2
 
 # Build rule for target.
-tema1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tema1
-.PHONY : tema1
+tema2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tema2
+.PHONY : tema2
 
 # fast build rule for target.
-tema1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tema1.dir/build.make CMakeFiles/tema1.dir/build
-.PHONY : tema1/fast
+tema2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tema2.dir/build.make CMakeFiles/tema2.dir/build
+.PHONY : tema2/fast
 
 tema.o: tema.cpp.o
 .PHONY : tema.o
 
 # target to build an object file
 tema.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tema1.dir/build.make CMakeFiles/tema1.dir/tema.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tema2.dir/build.make CMakeFiles/tema2.dir/tema.cpp.o
 .PHONY : tema.cpp.o
 
 tema.i: tema.cpp.i
@@ -142,7 +142,7 @@ tema.i: tema.cpp.i
 
 # target to preprocess a source file
 tema.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tema1.dir/build.make CMakeFiles/tema1.dir/tema.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tema2.dir/build.make CMakeFiles/tema2.dir/tema.cpp.i
 .PHONY : tema.cpp.i
 
 tema.s: tema.cpp.s
@@ -150,7 +150,7 @@ tema.s: tema.cpp.s
 
 # target to generate assembly for a file
 tema.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tema1.dir/build.make CMakeFiles/tema1.dir/tema.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tema2.dir/build.make CMakeFiles/tema2.dir/tema.cpp.s
 .PHONY : tema.cpp.s
 
 # Help Target
@@ -161,7 +161,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... tema1"
+	@echo "... tema2"
 	@echo "... tema.o"
 	@echo "... tema.i"
 	@echo "... tema.s"

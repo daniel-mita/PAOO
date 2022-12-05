@@ -1,0 +1,3 @@
+/Users/daniel/Facultate/PAOO/PAOO/tema2/CMakeFiles/tema2.dir
+/Users/daniel/Facultate/PAOO/PAOO/tema2/CMakeFiles/edit_cache.dir
+/Users/daniel/Facultate/PAOO/PAOO/tema2/CMakeFiles/rebuild_cache.dir
