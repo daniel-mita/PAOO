@@ -2,44 +2,28 @@
 #include <string>
 #include <memory>
 
-/* Base class */
-class Uncopyable
-{
-protected:
-  Uncopyable() {}
-  ~Uncopyable() {}
-
-private:
-  Uncopyable(const Uncopyable &); // prevent copying
-  Uncopyable &operator=(const Uncopyable &);
-};
-
-/* Custom class Car which inherits the base class */
 class Proiect 
 {
     public:
         /* Default Constructor */
-        Proiect() : theName("inexisting_car"), theColor("inexisting_color"), numberOfSeats(0), isCarLocked(false) {}
+        Proiect() : Nume("abc"), durataZile(0) {}
 
         /* Custom Constructor */
-        Proiect(const std::string& name, const std::string& color, const int seats);
+        Proiect(const std::string& nume, const int durata);
 
-        /* Custom Copy Constructor, commented due to Item 6 */
-        Proiect(const Proiect& givenCar) :theName(givenCar.theName), theColor(givenCar.theColor), numberOfSeats(givenCar.numberOfSeats), isCarLocked(givenCar.isCarLocked)
+        Proiect(const Proiect& givenProj) :Nume(givenProj.Nume), durataZile(givenProj.durataZile)
         {}
 
         /* Custom assignment operator */
-        Proiect& operator=(const Proiect& rhs)
+        Proiect& operator=(const Proiect& proj)
         {
-            if(this == &rhs)
+            if(this == &proj)
             {
                 std::cout<<"Objects are identical!\n";
                 return *this;
             }
-            this->theColor = rhs.theColor;
-            this->theName = rhs.theName;
-            this->numberOfSeats = rhs.numberOfSeats;
-            this->isCarLocked = rhs.isCarLocked;
+            this->Nume = proj.Nume;
+            this->durataZile = proj.durataZile;
             return *this;
         }
 
@@ -49,50 +33,48 @@ class Proiect
             std::cout<<"Object has been completely removed from memory!\n";
         }
 
-        void printCar()
+        void printProj()
         {
-            std::cout<<"Car: " << this->theName << "\nColor: " << this->theColor << "\n" << this->numberOfSeats << " seats\n";
+            std::cout<<"Proiect: " << this->Nume << "\n" << this->durataZile << " zile\n";
         }
 
 
     private:
-        std::string theName;
-        std::string theColor;
-        int numberOfSeats;
-        bool isCarLocked;
+        std::string Nume;
+        int durataZile;
 };
 
 /* Constructor */
-Proiect::Proiect(const std::string& name, const std::string& color, const int seats) :theName(name), theColor(color), numberOfSeats(seats), isCarLocked(false)
+Proiect::Proiect(const std::string& nume, const int durata) :Nume(nume), durataZile(durata)
 {}
 
-Proiect* createCustomProiectObject(const std::string& name, const std::string& color, const int seats)
+Proiect* createProjObject(const std::string& nume, const int durata)
 {
-    return new Proiect(name, color, seats);
+    return new Proiect(nume, durata);
 }
 
-void printNewCustomProiect(const std::string& name, const std::string& color, const int seats)
+void printNewProj(const std::string& nume, const int durata)
 {
-    std::auto_ptr<Proiect> pProj(createCustomProiectObject(name, color, seats));
-    pProj -> printCar();
+    std::auto_ptr<Proiect> pProj(createProjObject(nume, durata));
+    pProj -> printProj();
 }
 
 int main()
 {
-    //item 13 with "auto_ptr"
-    printNewCustomCar("Custom Ford GT 2017", "Blue", 2);
+    //item 13
+    printNewProj("Proiect", 5);
     std::cout<<"\n";
 
     std::auto_ptr<Proiect> pProj1(new Proiect);
-    pProj1 -> printCar();
+    pProj1 -> printProj();
     std::cout<<"\n";
 
-    std::auto_ptr<Proiect> pProj2(pProj1);    // now, pProj1 becomes null because pProj2 points to the empty car
-    pProj2 -> printCar();
+    std::auto_ptr<Proiect> pProj2(pProj1);    // pProj1 becomes null 
+    pProj2 -> printProj();
     std::cout<<"\n";
     
-    pProj1 = pProj2;                      // now, pProj2 becomes null because pProj1 points to the empty car again
-    pProj1 -> printCar();
+    pProj1 = pProj2;                      // pProj2 becomes null 
+    pProj1 -> printProj();
     std::cout<<"\n";
 
     return 0;
